@@ -9,7 +9,7 @@ interface Theme {
 function About(theme: Theme) {
     return ( 
         <>
-            <div className="about" id='about' data-theme = {theme}>
+            <div className="about" id='about' data-theme = {theme.theme}>
                 <div className="about-title-div">
                 <h1 className="about-title">About</h1>
                 </div>

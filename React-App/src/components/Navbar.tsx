@@ -6,7 +6,8 @@ import './Navbar.css'
 import {DarkModeToggle} from "./DarkMode";
 
 interface Theme {
-  theme: string
+  theme: string,
+  isChecked: ()=>void
 }
 
 function NavbarCompo(theme: Theme) {
@@ -42,8 +43,8 @@ function NavbarCompo(theme: Theme) {
             <Nav.Link href="#" disabled>
               Contact
             </Nav.Link>
-            <Nav.Link href="#" disabled>
-            <DarkModeToggle theme = {theme.theme}/>
+            <Nav.Link href="#" >
+            <DarkModeToggle handleChange={theme.theme === "light" ? false : true} isChecked={theme.isChecked}/>
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

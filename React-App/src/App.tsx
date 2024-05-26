@@ -8,23 +8,25 @@ import About from "./content/About";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
 import Typewriter from "./components/ListGroup";
-import {DarkModeToggle, ThemeContext} from './components/DarkMode'
+import {DarkModeToggle} from './components/DarkMode'
+
+import  ThemeContext from "./context/ThemeContext";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
-  const themeContext = useContext(ThemeContext);
+  //const themeContext = useContext(ThemeContext);
+  //console.log(themeContext)
   return (
-    <ThemeContext.Provider value={`${isDark ? "dark": "light"}`}>
+    //<ThemeContext.Provider value={isDark}>
       <Router>
       <div className = "App" data-theme = {isDark ? "dark": "light"}>
-    <NavbarCompo theme = {isDark ? "dark": "light"}/>
-
+    <NavbarCompo theme = {isDark ? "dark": "light"} isChecked={()=>setIsDark(!isDark)}/>
     <Home theme = {isDark ? "dark": "light"} />
     <About theme = {isDark ? "dark": "light"} />
     <Footer theme = {isDark ? "dark": "light"} />
   </div>
     </Router>
-    </ThemeContext.Provider>
+    //</ThemeContext.Provider>
 );
 }
 

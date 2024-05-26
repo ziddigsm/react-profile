@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import './FooterColumn.css'
 import '../index.css'
 
-interface Theme {
-    theme: string
-}
 
 interface FooterLink {
     title: string,
@@ -13,7 +10,7 @@ interface FooterLink {
 
 interface FooterLinkList {
     title: string
-    theme: Theme
+    theme: string
     list: FooterLink[]
 }
 

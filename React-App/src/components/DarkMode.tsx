@@ -1,22 +1,26 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import './DarkMode.css';
 
-interface Theme {
-    theme: string
+interface Props {
+    handleChange: boolean,
+    isChecked: ()=>void
 }
+export const ThemeContext = createContext("light");
 
-export const ThemeContext = React.createContext("light");
-
-export function DarkModeToggle(theme: Theme) {
-    const [isDark, setIsDark] = useState("light");
-    
+export function DarkModeToggle(theme: Props) {
+    //const the = theme.theme;
+    //const [isDark, setIsDark] = useState(the);
+    //let themeContext = useContext(ThemeContext);
+    //themeContext = isDark;
     function handleClick() {
-        setIsDark(isDark === theme.theme ? "dark" : "light")
+        //setIsDark(isDark === the ? "dark" : "dark")
     }
 
  return (
-        <div className='toggle-bar' onClick={handleClick} data-theme = {isDark} >
-            <div className={`toggle-sphere ${isDark}`}></div>
+        <div className='toggle'>
+            <div className='toggle-bar' onClick={theme.isChecked} data-theme = {theme.handleChange ? "dark": "light"} >
+            <div className={`toggle-sphere ${theme.handleChange ? "dark": "light"}`}></div>
+        </div>
         </div>
     )
 };

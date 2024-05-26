@@ -21,7 +21,7 @@ function Footer(theme: Theme) {
             </div>
             <div className="footer-2">
                 <div className="footer-redirect">
-                    <FooterColumn title = "Important Links" theme = {theme} list = {
+                    <FooterColumn title = "Important Links" theme = {theme.theme} list = {
                         [{
                             title: "Home",
                             type: "Link"
@@ -47,7 +47,7 @@ function Footer(theme: Theme) {
                 </div>
             </div>
             <div className='footer-3'>
-                <FooterColumn title = "Contact Me" theme={theme} list = {[{
+                <FooterColumn title = "Contact Me" theme={theme.theme} list = {[{
                     title: "+1 (513) 399-0297",
                     type: "Link"
                 },
@@ -65,7 +65,6 @@ function Footer(theme: Theme) {
                 }
                 ]}/>
             </div>
-            <DarkModeToggle theme = {theme.theme}/>
         </div>
     )
 }
