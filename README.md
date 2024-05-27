@@ -22,7 +22,7 @@ In this application, you can find the following components implemented and readi
 - About
 - Footer
 - NavBar
-- Dark Content
+- DarkMode toggle
 
 ## Installation Instructions
 
