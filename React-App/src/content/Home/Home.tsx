@@ -1,7 +1,7 @@
-import myImage from "../assets/ziddi.jpeg"
+import myImage from "../../assets/ziddi.jpeg"
 import Typist from 'react-typist-component';
-import Footer from '../components/Footer.js'
 import './Home.css'
+import myimg from '../../assets/klu.png'
 
 interface Theme {
     theme: string
@@ -22,7 +22,9 @@ function Home(theme: Theme) {
          </div>
          <div className="bio">
             <span className="biodata">{bio}</span>
-            <button className="resume" title="Download my Resume">My Resume</button>
+            <button className="resume" title="Download my Resume">
+            <a href={myimg} download="Resume">My Resume</a>
+            </button>
          </div>
         </div>
     )

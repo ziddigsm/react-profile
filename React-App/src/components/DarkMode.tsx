@@ -8,13 +8,6 @@ interface Props {
 export const ThemeContext = createContext("light");
 
 export function DarkModeToggle(theme: Props) {
-    //const the = theme.theme;
-    //const [isDark, setIsDark] = useState(the);
-    //let themeContext = useContext(ThemeContext);
-    //themeContext = isDark;
-    function handleClick() {
-        //setIsDark(isDark === the ? "dark" : "dark")
-    }
 
  return (
         <div className='toggle'>
