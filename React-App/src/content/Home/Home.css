@@ -18,13 +18,12 @@
 }
 
 .name {
-    
     display: flex;
     align-items: center;
     gap: 20px;
     text-align: center;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 5px;
     flex-direction: column;
     font-weight: 500;
 }
@@ -85,4 +84,3 @@
 .resume:hover {
     background-position: -100% 0;
 }
-

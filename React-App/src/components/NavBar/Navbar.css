@@ -9,3 +9,11 @@
     background-color: rgb(71, 220, 88);
     transition: background-color 250ms ease-in-out;
 }
+
+.navbar-dark .nav-link.disabled {
+    color: var(--disabled-color) !important;
+  }
+
+  .navbar-light .nav-link.disabled {
+    color: var(--disabled-color) !important;
+  }
