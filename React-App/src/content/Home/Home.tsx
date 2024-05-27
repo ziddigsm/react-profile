@@ -1,6 +1,6 @@
-import myImage from "../assets/ziddi.jpeg"
+import myImage from "../../assets/ziddi.jpeg"
 import Typist from 'react-typist-component';
-import Footer from '../components/Footer.js'
+import Footer from '../../components/Footer.js'
 import './Home.css'
 
 interface Theme {

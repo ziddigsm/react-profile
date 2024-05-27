@@ -1,5 +1,5 @@
 import * as React from 'react';
-import myImage from "../assets/ziddi.jpeg"
+import myImage from "../../assets/ziddi.jpeg"
 import './About.css'
 
 interface Theme {

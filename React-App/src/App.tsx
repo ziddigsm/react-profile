@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import "./App.css";
-import Home from "./content/Home";
+import Home from "./content/Home/Home";
 import NavbarCompo from "./components/Navbar";
-import Education from "./content/Education";
+import Education from "./content/Education/Education";
 import Footer from "./components/Footer";
-import About from "./content/About";
+import About from "./content/About/About";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
 import Typewriter from "./components/ListGroup";

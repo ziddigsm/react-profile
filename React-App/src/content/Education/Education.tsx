@@ -1,6 +1,6 @@
 import React from 'react';
-import klu from '../assets/klu.png';
-import uc from '../assets/uc logo.png';
+import klu from '../../assets/klu.png';
+import uc from '../../assets/uc logo.png';
 import './Education.css'
 
 const Education = () => {
