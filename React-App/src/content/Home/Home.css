@@ -66,19 +66,23 @@
 }
 
 .resume {
-    background: -webkit-linear-gradient(left, red, blue);
-    -webkit-text-fill-color: text;   
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, red, blue);
     border-radius: 50px;
     padding: 10px 40px;
     width: 11rem;
-    color: aliceblue;
+    
     cursor: pointer;
     border-width: 0px;
+    transition: background-position 0.5s ease;
+}
+
+.resume a {
+    color: aliceblue;
+    text-decoration: none;
 }
 
 .resume:hover {
-    background: -webkit-linear-gradient(left, blue, red);
-    -webkit-text-fill-color: text; 
-    transition: 0.4s;
+    background-position: -100% 0;
 }
 

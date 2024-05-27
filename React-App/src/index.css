@@ -6,6 +6,7 @@
     --background-footer-color: #696969;
     --third-text-color: #cdcccc;
     --dark-mode-transition: background-color 250ms ease-in-out;
+    --highlight-color: #ffe2e2;
   }
   
   [data-theme="dark"] {

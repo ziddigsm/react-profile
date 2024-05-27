@@ -2,22 +2,17 @@ import { useContext, useState } from "react";
 import "./App.css";
 import Home from "./content/Home/Home";
 import NavbarCompo from "./components/Navbar";
-import Education from "./content/Education/Education";
 import Footer from "./components/Footer";
 import About from "./content/About/About";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ListGroup } from "react-bootstrap";
-import Typewriter from "./components/ListGroup";
-import {DarkModeToggle} from './components/DarkMode'
-
-import  ThemeContext from "./context/ThemeContext";
+import useLocalStorage from 'use-local-storage';
+import { useMediaQuery } from 'react-responsive';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-  //const themeContext = useContext(ThemeContext);
-  //console.log(themeContext)
+  const systemPreference = useMediaQuery({query: '(prefers-color-scheme: dark)'});
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDark, setIsDark] = useLocalStorage("isDark",systemPreference);
   return (
-    //<ThemeContext.Provider value={isDark}>
       <Router>
       <div className = "App" data-theme = {isDark ? "dark": "light"}>
     <NavbarCompo theme = {isDark ? "dark": "light"} isChecked={()=>setIsDark(!isDark)}/>
@@ -26,7 +21,6 @@ function App() {
     <Footer theme = {isDark ? "dark": "light"} />
   </div>
     </Router>
-    //</ThemeContext.Provider>
 );
 }
 
