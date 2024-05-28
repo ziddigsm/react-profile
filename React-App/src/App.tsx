@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import useLocalStorage from 'use-local-storage';
 import { useMediaQuery } from 'react-responsive';
 import { ThemeContext } from "./context/ThemeContext";
+import { useEffect, useRef } from "react";
 
 export interface themeProps {
   theme: boolean,
@@ -15,9 +16,32 @@ export interface themeProps {
 
 function App() {
   const systemPreference = useMediaQuery({query: '(prefers-color-scheme: dark)'});
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark",systemPreference);
-  
+  const isFirstRender = useRef(true);
+  console.log(isFirstRender);
+  useEffect(()=>{
+    if(isFirstRender.current){
+      isFirstRender.current = false;
+      console.log(isFirstRender);
+      return;
+    }
+    console.log('render false');
+    if(isDark === false && !isFirstRender.current){
+      setTimeout(()=>{
+        alert("Light Mode activated");
+      },200);
+      return;
+    }
+    else if (isDark === true && !isFirstRender.current){
+      console.log('in if-else')
+      setTimeout(()=>{
+        alert("Dark Mode activated");
+      },200);
+      return;
+    }
+
+    //isFirstRender.current = true;
+  },[isDark, isFirstRender])
   return (
     <>
     <ThemeContext.Provider value={{theme: isDark, isChecked: (()=>setIsDark(!isDark))}}>
