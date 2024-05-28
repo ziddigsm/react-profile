@@ -1,14 +1,14 @@
-import {DarkModeToggle} from './DarkMode';
 import './Footer.css'
-import FooterColumn from './FooterColumn'
+import FooterColumn from '../FooterColumn/FooterColumn'
+import { useThemeContext } from '../../context/ThemeContext'; 
 
-interface Theme {
-    theme: string
-}
-
-function Footer(theme: Theme) {
-    return (
-        <div className = "footer-container" data-theme = {theme.theme}>
+function Footer() {
+    let theme: string = "light";
+  const themeProps = useThemeContext();
+  if (themeProps.theme === true) 
+  theme = "dark";
+    return (   
+        <div className = "footer-container" data-theme = {theme}>
             <div className="footer-1">
                 <div className="footer-name">
                     <h1 className='footer-name-title'>
@@ -21,7 +21,7 @@ function Footer(theme: Theme) {
             </div>
             <div className="footer-2">
                 <div className="footer-redirect">
-                    <FooterColumn title = "Important Links" theme = {theme.theme} list = {
+                    <FooterColumn title = "Important Links" theme = {theme} list = {
                         [{
                             title: "Home",
                             type: "Link"
@@ -47,7 +47,7 @@ function Footer(theme: Theme) {
                 </div>
             </div>
             <div className='footer-3'>
-                <FooterColumn title = "Contact Me" theme={theme.theme} list = {[{
+                <FooterColumn title = "Contact Me" theme={theme} list = {[{
                     title: "+1 (513) 399-0297",
                     type: "Link"
                 },
@@ -69,4 +69,4 @@ function Footer(theme: Theme) {
     )
 }
 
-export default Footer
+export default Footer;

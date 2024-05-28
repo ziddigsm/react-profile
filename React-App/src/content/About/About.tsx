@@ -1,15 +1,15 @@
-import * as React from 'react';
-import myImage from "../../assets/ziddi.jpeg"
+import myImage from "../../assets/image2.jpg"
 import './About.css'
+import { useThemeContext } from '../../context/ThemeContext';
 
-interface Theme {
-    theme: string
-}
-
-function About(theme: Theme) {
+function About() {
+    let theme: string = "light";
+  const themeProps = useThemeContext();
+  if (themeProps.theme === true) 
+  theme = "dark";
     return ( 
         <>
-            <div className="about" id='about' data-theme = {theme.theme}>
+            <div className="about" id='about' data-theme = {theme}>
                 <div className="about-title-div">
                 <h1 className="about-title">About</h1>
                 </div>
@@ -62,7 +62,5 @@ function About(theme: Theme) {
         </>
      );
 }
-
-
 
 export default About;

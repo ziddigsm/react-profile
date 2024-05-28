@@ -1,0 +1,16 @@
+.social-icon-pack {
+    gap: 50px;
+    display: flex;
+    align-self:inherit;
+    position: relative;
+}
+
+.icon.github {
+    cursor: pointer;
+    color: var(--primary-text-color);
+}
+.sass {
+    width: 40px;
+    height:40px;
+    margin-bottom: 50px;
+}

@@ -1,22 +1,19 @@
-
-import { useState } from "react";
 import { Navbar, Nav, NavDropdown, Form, Container, Button } from 'react-bootstrap';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'
-import {DarkModeToggle} from "./DarkMode";
+import {DarkModeToggle} from "../DarkMode/DarkMode";
+import { useThemeContext } from "../../context/ThemeContext";
 
-interface Theme {
-  theme: string,
-  isChecked: ()=>void
-}
-
-function NavbarCompo(theme: Theme) {
+function NavbarCompo() {
+  let theme: string = "light";
+  const themeProps = useThemeContext();
+  if (themeProps.theme === true) 
+  theme = "dark";
     return (
         <div>
-        <Navbar bg = {String(theme.theme)} variant={String(theme.theme)} expand="lg" className="mr-sm-6">
+        <Navbar bg = {theme} variant={theme} expand="lg" className="mr-sm-6">
       <Container fluid>
         <Navbar.Brand href="#">Home</Navbar.Brand>
-        
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -44,7 +41,7 @@ function NavbarCompo(theme: Theme) {
               Contact
             </Nav.Link>
             <Nav.Link href="#" >
-            <DarkModeToggle handleChange={theme.theme === "light" ? false : true} isChecked={theme.isChecked}/>
+            <DarkModeToggle />
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

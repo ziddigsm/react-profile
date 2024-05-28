@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import './FooterColumn.css'
-import '../index.css'
-import { MouseEventHandler, useState } from 'react';
+import '../../index.css'
+import { useState } from 'react';
 
 interface FooterLink {
     title: string,
