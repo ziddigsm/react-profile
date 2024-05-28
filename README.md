@@ -13,6 +13,12 @@ This is my personal portfolio that is still under development.
 ## Hooks Used
 
 - useState
+- useContext
+- useLocalStorage
+- useMediaQuery
+- Custom Hooks
+- useRef
+- useEffect
 
 ## Components
 
