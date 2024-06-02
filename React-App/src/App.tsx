@@ -15,7 +15,6 @@ export interface themeProps {
 
 function App() {
   const systemPreference = useMediaQuery({query: '(prefers-color-scheme: dark)'});
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark",systemPreference);
   
   return (

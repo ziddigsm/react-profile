@@ -20,11 +20,11 @@ function NavbarCompo() {
             className="me-auto my-2 my-lg-0"
           >
             <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#action1">Education</Nav.Link>
-            <Nav.Link href="#action2">Experience</Nav.Link>
-            <NavDropdown title="Projects" id="navbarScrollingDropdown">
+            <Nav.Link href="#action1" disabled>Education</Nav.Link>
+            <Nav.Link href="#action2" disabled>Experience</Nav.Link>
+            <NavDropdown title="Projects" id="navbarScrollingDropdown" disabled>
               <NavDropdown.Item href="#action3">BardTales</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item href="#action4" disabled>
                 IBM Watson - Chatbot
               </NavDropdown.Item>
               <NavDropdown.Divider />
@@ -32,7 +32,7 @@ function NavbarCompo() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Skills & Certifications" id="navbarScrollingDropdownSC">
+            <NavDropdown title="Skills & Certifications" id="navbarScrollingDropdownSC" disabled>
             <NavDropdown.Item href="#action6">Skills</NavDropdown.Item>
               <NavDropdown.Item href="#action7">Certifications</NavDropdown.Item>
               
@@ -50,8 +50,9 @@ function NavbarCompo() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              disabled
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" disabled>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

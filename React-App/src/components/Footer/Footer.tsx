@@ -20,7 +20,6 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-2">
-                <div className="footer-redirect">
                     <FooterColumn title = "Important Links" theme = {theme} list = {
                         [{
                             title: "Home",
@@ -45,7 +44,6 @@ function Footer() {
                     ]
                     }/>                    
                 </div>
-            </div>
             <div className='footer-3'>
                 <FooterColumn title = "Contact Me" theme={theme} list = {[{
                     title: "+1 (513) 399-0297",
